@@ -1,6 +1,7 @@
 local M = {}
 
 M.general = {
+  -- tmux-vim-navigator keyboard shortcuts
   n = {
     ["<C-h>"] = { "<cmd> TmuxNavigateLeft<CR>", "window left" },
     ["<C-l>"] = { "<cmd> TmuxNavigateRight<CR>", "window right" },
