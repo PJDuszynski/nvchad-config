@@ -11,10 +11,16 @@ local sources = {
    formatting.shellharden,
    formatting.yamlfmt,
    formatting.black,
-   formatting.flake8,
+   formatting.rustfmt,
 
+   lint.pylint,
+   lint.mypy,
+   lint.flake8,
    lint.shellcheck,
+   lint.shellharden,
+   lint.yamllint,
 }
+
 
 
 null_ls.setup {
