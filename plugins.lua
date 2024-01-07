@@ -1,6 +1,26 @@
 local cmp = require "cmp"
 
 local plugins = {
+
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        "vim",
+        "lua",
+
+        "html",
+        "css",
+        "javascript",
+        "typescript",
+        "tsx",
+        "json",
+        "python",
+        "rust",
+        "c",
+      },
+    },
+  },
   {
     "christoomey/vim-tmux-navigator",
     cmd = {
@@ -10,6 +30,10 @@ local plugins = {
       "TmuxNavigateRight",
       "TmuxNavigatePrevious",
     },
+    lazy = false,
+  },
+  {
+    "hiphish/rainbow-delimiters.nvim",
     lazy = false,
   },
   {
