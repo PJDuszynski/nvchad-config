@@ -17,7 +17,6 @@ local sources = {
    lint.mypy,
    lint.flake8,
    lint.shellcheck,
-   lint.shellharden,
    lint.yamllint,
 }
 
