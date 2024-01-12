@@ -8,17 +8,18 @@ local plugins = {
       ensure_installed = {
         "vim",
         "lua",
-
         "html",
         "css",
         "javascript",
         "typescript",
+        "hcl",
+        "dockerfile",
         "tsx",
         "json",
         "python",
         "rust",
         "c",
-        "sql"
+        "sql",
       },
     },
   },
