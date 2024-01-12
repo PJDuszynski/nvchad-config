@@ -18,6 +18,7 @@ local plugins = {
         "python",
         "rust",
         "c",
+        "sql"
       },
     },
   },
