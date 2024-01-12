@@ -8,8 +8,10 @@ vim.opt.confirm = true
 vim.opt.scrolloff = 8
 vim.opt.swapfile = false
 vim.opt.undofile = false
+vim.opt.list = true
+vim.opt.listchars = 'space:·'
 
-
+vim.g.indent_blankline_use_treesitter = true
 
 vim.filetype.add({
   extension = {
