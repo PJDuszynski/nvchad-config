@@ -10,6 +10,8 @@ M.general = {
     -- trouble
     ["<leader>xd"] = { "<cmd> TroubleToggle document_diagnostics<CR>", "Show diagnostics" },
     ["<leader>xw"] = { "<cmd> TroubleToggle workspace_diagnostics<CR>", "Show diagnostics" },
+    -- neogit
+    ["<leader>gg"] = { "<cmd> Neogit<Cr>", "Show diagnostics" },
   },
 }
 

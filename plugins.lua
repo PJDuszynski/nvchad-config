@@ -79,6 +79,7 @@ local plugins = {
   },
   {
     "NeogitOrg/neogit",
+    event = "VeryLazy",
     dependencies = {
 
       "nvim-lua/plenary.nvim",         -- required
