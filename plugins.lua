@@ -2,7 +2,7 @@ local cmp = require "cmp"
 
 local plugins = {
   {
- "nvim-treesitter/nvim-treesitter",
+    "nvim-treesitter/nvim-treesitter",
     opts = {
       ensure_installed = {
         "vim",
@@ -44,7 +44,7 @@ local plugins = {
       name = ".venv",
       -- auto_refresh = false
     },
-    event = "VeryLazy", -- Optional: needed only if you want to type `:VenvSelect` without a keymapping
+    event = "VeryLazy",
     keys = {
       -- Keymap to open VenvSelector to pick a venv.
       { "<leader>vs", "<cmd>VenvSelect<cr>" },
@@ -82,8 +82,8 @@ local plugins = {
     event = "VeryLazy",
     dependencies = {
 
-      "nvim-lua/plenary.nvim",         -- required
-      "sindrets/diffview.nvim",        -- optional - Diff integration
+      "nvim-lua/plenary.nvim", -- required
+      "sindrets/diffview.nvim", -- optional - Diff integration
 
       "nvim-telescope/telescope.nvim", -- optional
     },
@@ -93,7 +93,7 @@ local plugins = {
     "junnplus/lsp-setup.nvim",
     dependencies = {
       "neovim/nvim-lspconfig",
-      "williamboman/mason.nvim",           -- optional
+      "williamboman/mason.nvim", -- optional
       "williamboman/mason-lspconfig.nvim", -- optional
     },
   },
@@ -111,8 +111,7 @@ local plugins = {
   {
     "nvim-pack/nvim-spectre",
     event = "VeryLazy",
-
-  }
+  },
 }
 
 return plugins
