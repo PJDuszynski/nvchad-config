@@ -108,6 +108,11 @@ local plugins = {
       -- refer to the configuration section below
     },
   },
+  {
+    "nvim-pack/nvim-spectre",
+    event = "VeryLazy",
+
+  }
 }
 
 return plugins

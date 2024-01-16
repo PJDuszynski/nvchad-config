@@ -12,7 +12,10 @@ M.general = {
     ["<leader>xw"] = { "<cmd> TroubleToggle workspace_diagnostics<CR>", "Show diagnostics" },
     -- neogit
     ["<leader>gg"] = { "<cmd> Neogit<Cr>", "Show diagnostics" },
+    -- spectre
+    ["<leader>S"] = { "<cmd> lua require('spectre').toggle()<CR>", "Toggle Spectre" },
+    ["<leader>sw"] = { "<cmd> lua require('spectre').open_visual({select_word=true})<CR>", "Search current word" },
+
   },
 }
-
 return M
