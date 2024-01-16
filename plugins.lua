@@ -89,8 +89,8 @@ local plugins = {
     event = "VeryLazy",
     dependencies = {
 
-      "nvim-lua/plenary.nvim", -- required
-      "sindrets/diffview.nvim", -- optional - Diff integration
+      "nvim-lua/plenary.nvim",         -- required
+      "sindrets/diffview.nvim",        -- optional - Diff integration
 
       "nvim-telescope/telescope.nvim", -- optional
     },
@@ -100,7 +100,7 @@ local plugins = {
     "junnplus/lsp-setup.nvim",
     dependencies = {
       "neovim/nvim-lspconfig",
-      "williamboman/mason.nvim", -- optional
+      "williamboman/mason.nvim",           -- optional
       "williamboman/mason-lspconfig.nvim", -- optional
     },
   },
@@ -118,6 +118,10 @@ local plugins = {
   {
     "nvim-pack/nvim-spectre",
     event = "VeryLazy",
+  },
+  {
+    "NoahTheDuke/vim-just",
+    ft = { "just" },
   },
 }
 
