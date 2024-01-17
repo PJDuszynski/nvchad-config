@@ -3,7 +3,7 @@ local on_attach = configs.on_attach
 local capabilities = configs.capabilities
 
 local lspconfig = require "lspconfig"
-local servers = { "cssls", "clangd",  "pyright", }
+local servers = { "cssls", "clangd", "pyright" }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
@@ -12,3 +12,8 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities,
   }
 end
+
+vim.diagnostic.config {
+  virtual_text = false,
+  signs = false,
+}
