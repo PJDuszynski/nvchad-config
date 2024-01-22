@@ -20,6 +20,7 @@ local nomadfmt = {
 null_ls.register(nomadfmt)
 
 local sources = {
+  formatting.sqlfluff,
   formatting.prettier,
   formatting.stylua,
   formatting.shellharden,
@@ -28,6 +29,7 @@ local sources = {
   formatting.rustfmt,
 
   lint.pylint,
+  lint.sqlfluff,
   lint.mypy,
   lint.flake8,
   lint.shellcheck,
