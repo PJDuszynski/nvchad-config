@@ -27,6 +27,7 @@ local sources = {
   formatting.yamlfmt,
   formatting.black,
   formatting.rustfmt,
+  formatting.fixjson,
 
   lint.pylint,
   lint.sqlfluff,
