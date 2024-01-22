@@ -8,14 +8,20 @@ M.general = {
     ["<C-j>"] = { "<cmd> TmuxNavigateDown<CR>", "window down" },
     ["<C-k>"] = { "<cmd> TmuxNavigateUp<CR>", "window up" },
     -- trouble
-    ["<leader>xd"] = { "<cmd> TroubleToggle document_diagnostics<CR>", "Show diagnostics" },
-    ["<leader>xw"] = { "<cmd> TroubleToggle workspace_diagnostics<CR>", "Show diagnostics" },
+    ["<leader>xd"] = { "<cmd> TroubleToggle document_diagnostics<CR>", "Show document diagnostics" },
+    ["<leader>xw"] = { "<cmd> TroubleToggle workspace_diagnostics<CR>", "Show workspace diagnostics" },
+    ["<leader>xx"] = { "<cmd> TroubleToggle <CR>", "Toggle diagnostics pane" },
     -- neogit
     ["<leader>gg"] = { "<cmd> Neogit<Cr>", "Show diagnostics" },
     -- spectre
     ["<leader>S"] = { "<cmd> lua require('spectre').toggle()<CR>", "Toggle Spectre" },
     ["<leader>sw"] = { "<cmd> lua require('spectre').open_visual({select_word=true})<CR>", "Search current word" },
 
+    [",P"] = { '"+P', desc = "Paste from system clipboard" },
+    [",p"] = { '"+p', desc = "Paste from system clipboard" },
+  },
+  v = {
+    ["C-C"] = { '"+y', "Copy to system clipboard" },
   },
 }
 return M
