@@ -89,8 +89,8 @@ local plugins = {
     event = "VeryLazy",
     dependencies = {
 
-      "nvim-lua/plenary.nvim",         -- required
-      "sindrets/diffview.nvim",        -- optional - Diff integration
+      "nvim-lua/plenary.nvim", -- required
+      "sindrets/diffview.nvim", -- optional - Diff integration
 
       "nvim-telescope/telescope.nvim", -- optional
     },
@@ -100,7 +100,7 @@ local plugins = {
     "junnplus/lsp-setup.nvim",
     dependencies = {
       "neovim/nvim-lspconfig",
-      "williamboman/mason.nvim",           -- optional
+      "williamboman/mason.nvim", -- optional
       "williamboman/mason-lspconfig.nvim", -- optional
     },
   },
@@ -108,12 +108,7 @@ local plugins = {
     "folke/trouble.nvim",
     event = "VeryLazy",
     dependencies = { "nvim-tree/nvim-web-devicons" },
-    opts = {
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-
-      -- refer to the configuration section below
-    },
+    opts = {},
   },
   {
     "nvim-pack/nvim-spectre",
@@ -122,6 +117,16 @@ local plugins = {
   {
     "NoahTheDuke/vim-just",
     ft = { "just" },
+  },
+  {
+    "tversteeg/registers.nvim",
+    cmd = "Registers",
+    config = true,
+    keys = {
+      { '"', mode = { "n", "v" } },
+      { "<C-R>", mode = "i" },
+    },
+    name = "registers",
   },
 }
 
