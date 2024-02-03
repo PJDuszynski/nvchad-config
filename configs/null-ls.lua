@@ -20,7 +20,9 @@ local nomadfmt = {
 null_ls.register(nomadfmt)
 
 local sources = {
-  formatting.sqlfluff,
+  formatting.sqlfluff.with {
+    extra_args = { "--dialect", "postgres" },
+  },
   formatting.prettier,
   formatting.stylua,
   formatting.shellharden,
@@ -30,7 +32,9 @@ local sources = {
   formatting.fixjson,
 
   lint.pylint,
-  lint.sqlfluff,
+  lint.sqlfluff.with {
+    extra_args = { "--dialect", "postgres" },
+  },
   lint.mypy,
   lint.flake8,
   lint.shellcheck,
