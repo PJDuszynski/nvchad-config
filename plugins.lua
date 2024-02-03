@@ -155,6 +155,15 @@ local plugins = {
       require "custom.configs.mason-pkgs"
     end,
   },
+  {
+    "stevearc/oil.nvim",
+    event = "VeryLazy",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    opts = function() 
+      return require "custom.configs.oil"
+    end
+
+  },
 }
 
 return plugins
