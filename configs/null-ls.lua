@@ -2,6 +2,13 @@ local null_ls = require "null-ls"
 
 local formatting = null_ls.builtins.formatting
 local lint = null_ls.builtins.diagnostics
+local sql_dialect = function()
+  if string.find(vim.fn.getcwd(), "clickhouse") then
+    return "clickhouse"
+  else
+    return "postgres"
+  end
+end
 
 local nomadfmt = {
   method = null_ls.methods.FORMATTING,
@@ -20,24 +27,28 @@ local nomadfmt = {
 null_ls.register(nomadfmt)
 
 local sources = {
-  formatting.sqlfluff.with {
-    extra_args = { "--dialect", "postgres" },
-  },
-  formatting.prettier,
+  -- general
   formatting.stylua,
   formatting.shellharden,
   formatting.yamlfmt,
-  formatting.black,
   formatting.rustfmt,
   formatting.fixjson,
-
-  lint.pylint,
-  lint.sqlfluff.with {
-    extra_args = { "--dialect", "postgres" },
-  },
-  lint.flake8,
+  formatting.prettier,
   lint.shellcheck,
   lint.yamllint,
+
+  --python
+  formatting.black,
+  lint.ruff,
+  lint.flake8,
+
+  -- sql
+  lint.sqlfluff.with {
+    extra_args = { "--dialect", sql_dialect() },
+  },
+  formatting.sqlfluff.with {
+    extra_args = { "--dialect", sql_dialect() },
+  },
 }
 
 null_ls.setup {
