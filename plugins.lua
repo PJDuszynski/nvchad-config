@@ -41,6 +41,9 @@ local plugins = {
     lazy = false,
   },
   {
+    "tpope/vim-dadbod"
+  },
+  {
     "hiphish/rainbow-delimiters.nvim",
     lazy = false,
   },
