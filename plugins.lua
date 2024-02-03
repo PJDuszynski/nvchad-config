@@ -148,6 +148,13 @@ local plugins = {
       vim.g.db_ui_use_nerd_fonts = 1
     end,
   },
+  {
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
+    event = "VeryLazy",
+    config = function()
+      require "custom.configs.mason-pkgs"
+    end,
+  },
 }
 
 return plugins
