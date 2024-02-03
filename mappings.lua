@@ -19,6 +19,7 @@ M.general = {
 
     [",P"] = { '"+P', desc = "Paste from system clipboard" },
     [",p"] = { '"+p', desc = "Paste from system clipboard" },
+    ["<leader>d"] = {"<cmd> DBUIToggle<CR>", desc = "Toggle Database explorer"}
   },
   v = {
     ["C-C"] = { '"+y', "Copy to system clipboard" },
