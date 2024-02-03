@@ -35,7 +35,6 @@ local sources = {
   lint.sqlfluff.with {
     extra_args = { "--dialect", "postgres" },
   },
-  lint.mypy,
   lint.flake8,
   lint.shellcheck,
   lint.yamllint,
