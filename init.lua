@@ -21,7 +21,16 @@ vim.filetype.add {
 }
 
 -- Open nvim-tree on starttup
-local function open_nvim_tree()
+local function open_nvim_tree(data)
+  local dir = vim.fn.isdirectory(data.file) == 1
+
+  if not dir then
+    return
+  end
+
+  vim.cmd.enew()
+  vim.cmd.bw(data.buf)
+  vim.cmd.cd(data.file)
   require("nvim-tree.api").tree.open()
 end
 
