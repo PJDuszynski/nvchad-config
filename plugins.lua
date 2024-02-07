@@ -1,44 +1,17 @@
-local cmp = require "cmp"
+-- PLugin list
+-- 1) store all options in separate file in custom/configs/<extension_name>.lusa
+-- 2) Only event, dependencies and lazy should have information differing from the plugin config files
 
 local plugins = {
   {
     "nvim-treesitter/nvim-treesitter",
-    opts = {
-      ensure_installed = {
-        "markdown_inline",
-        "c",
-        "css",
-        "dockerfile",
-        "hcl",
-        "xml",
-        "csv",
-        "bash",
-        "html",
-        "javascript",
-        "json",
-        "lua",
-        "markdown",
-        "python",
-        "regex",
-        "rust",
-        "sql",
-        "toml",
-        "tsx",
-        "typescript",
-        "vim",
-        "yaml",
-      },
-    },
+    config = function()
+      require "custom.configs.treesitter"
+    end,
   },
   {
     "christoomey/vim-tmux-navigator",
-    cmd = {
-      "TmuxNavigateLeft",
-      "TmuxNavigateDown",
-      "TmuxNavigateUp",
-      "TmuxNavigateRight",
-      "TmuxNavigatePrevious",
-    },
+    cmd = require("custom.configs.vim-tmux-navigator").cmd,
     lazy = false,
   },
   {
@@ -51,30 +24,20 @@ local plugins = {
   {
     "linux-cultist/venv-selector.nvim",
     dependencies = { "neovim/nvim-lspconfig", "nvim-telescope/telescope.nvim", "mfussenegger/nvim-dap-python" },
-    opts = {
-      name = ".venv",
-      -- auto_refresh = false
-    },
     event = "VeryLazy",
-    keys = {
-      -- Keymap to open VenvSelector to pick a venv.
-      { "<leader>vs", "<cmd>VenvSelect<cr>" },
-      -- Keymap to retrieve the venv from a cache (the one previously used for the same project directory).
-      { "<leader>vc", "<cmd>VenvSelectCached<cr>" },
-    },
+    config = function()
+      require "custom.configs.venv-selector"
+    end,
   },
   {
     "neovim/nvim-lspconfig",
-
     dependencies = {
       "jose-elias-alvarez/null-ls.nvim",
-      config = function()
-        require "custom.configs.null-ls"
-      end,
     },
     config = function()
       require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
+      require "custom.configs.null-ls"
     end,
   },
   {
@@ -92,10 +55,8 @@ local plugins = {
     "NeogitOrg/neogit",
     event = "VeryLazy",
     dependencies = {
-
       "nvim-lua/plenary.nvim", -- required
       "sindrets/diffview.nvim", -- optional - Diff integration
-
       "nvim-telescope/telescope.nvim", -- optional
     },
     config = true,
@@ -123,30 +84,16 @@ local plugins = {
     ft = { "just" },
   },
   {
-    "tversteeg/registers.nvim",
-    cmd = "Registers",
-    config = true,
-    keys = {
-      { '"', mode = { "n", "v" } },
-      { "<C-R>", mode = "i" },
-    },
-    name = "registers",
-  },
-  {
     "kristijanhusak/vim-dadbod-ui",
     dependencies = {
       { "tpope/vim-dadbod", lazy = true },
       { "kristijanhusak/vim-dadbod-completion", ft = { "sql", "mysql", "plsql" }, lazy = true },
     },
-    cmd = {
-      "DBUI",
-      "DBUIToggle",
-      "DBUIAddConnection",
-      "DBUIFindBuffer",
-    },
+    cmd = function()
+      return require("custom.configs.vim-dadbod-ui").cmd
+    end,
     init = function()
-      -- Your DBUI configuration
-      vim.g.db_ui_use_nerd_fonts = 1
+      require("custom.configs.vim-dadbod-ui").init()
     end,
   },
   {
@@ -164,14 +111,6 @@ local plugins = {
       return require "custom.configs.oil"
     end,
   },
-  {
-    "ribelo/taskwarrior.nvim",
-    opts = {
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-    },
-  }, -- lazy.nvim
   {
     "folke/noice.nvim",
     event = "VeryLazy",
