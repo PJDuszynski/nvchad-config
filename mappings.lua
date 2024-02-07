@@ -21,6 +21,9 @@ M.general = {
     [",p"] = { '"+p', desc = "Paste from system clipboard" },
     ["<leader>d"] = { "<cmd> DBUIToggle <CR>", desc = "Toggle Database explorer" },
     ["<leader>o"] = { "<cmd> Oil --float <CR>", desc = "Edit filesystem in vim" },
+
+    ["<F9>"] = {"<cmd> lua require('noice').cmd('dismiss')<CR>", "Dismiss messages"}
+
   },
   v = {
     ["C-C"] = { '"+y', "Copy to system clipboard" },
