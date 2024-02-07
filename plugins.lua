@@ -5,6 +5,7 @@ local plugins = {
     "nvim-treesitter/nvim-treesitter",
     opts = {
       ensure_installed = {
+        "markdown_inline",
         "c",
         "css",
         "dockerfile",
@@ -159,10 +160,28 @@ local plugins = {
     "stevearc/oil.nvim",
     event = "VeryLazy",
     dependencies = { "nvim-tree/nvim-web-devicons" },
-    opts = function() 
+    opts = function()
       return require "custom.configs.oil"
-    end
-
+    end,
+  },
+  {
+    "ribelo/taskwarrior.nvim",
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    },
+  }, -- lazy.nvim
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    config = function()
+      return require "custom.configs.noice"
+    end,
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+    },
   },
 }
 
