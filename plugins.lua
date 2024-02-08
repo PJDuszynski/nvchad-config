@@ -1,4 +1,4 @@
--- PLugin list
+-- Plugin list
 -- 1) store all options in separate file in custom/configs/<extension_name>.lusa
 -- 2) Only event, dependencies and lazy should have information differing from the plugin config files
 
