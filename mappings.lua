@@ -25,8 +25,11 @@ M.general = {
     ["<F9>"] = { "<cmd> lua require('noice').cmd('dismiss')<CR>", "Dismiss messages" },
 
     -- venv selector
-     ["<leader>vs"] = {"<cmd>VenvSelect<cr>" },
-     ["<leader>vc"] = {"<cmd>VenvSelectCached<cr>" },
+    ["<leader>vs"] = { "<cmd>VenvSelect<cr>" },
+    ["<leader>vc"] = { "<cmd>VenvSelectCached<cr>" },
+
+    -- Buffer control
+    ["<leader>bk"] = { "<cmd>bufdo bwipeout<CR>", "Kill all buffers" },
   },
   v = {
     ["C-C"] = { '"+y', "Copy to system clipboard" },
