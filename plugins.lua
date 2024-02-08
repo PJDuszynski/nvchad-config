@@ -1,4 +1,3 @@
--- Plugin list
 -- 1) store all options in separate file in custom/configs/<extension_name>.lusa
 -- 2) Only event, dependencies and lazy should have information differing from the plugin config files
 
@@ -55,8 +54,8 @@ local plugins = {
     "NeogitOrg/neogit",
     event = "VeryLazy",
     dependencies = {
-      "nvim-lua/plenary.nvim", -- required
-      "sindrets/diffview.nvim", -- optional - Diff integration
+      "nvim-lua/plenary.nvim",         -- required
+      "sindrets/diffview.nvim",        -- optional - Diff integration
       "nvim-telescope/telescope.nvim", -- optional
     },
     config = true,
@@ -65,7 +64,7 @@ local plugins = {
     "junnplus/lsp-setup.nvim",
     dependencies = {
       "neovim/nvim-lspconfig",
-      "williamboman/mason.nvim", -- optional
+      "williamboman/mason.nvim",           -- optional
       "williamboman/mason-lspconfig.nvim", -- optional
     },
   },
@@ -86,7 +85,7 @@ local plugins = {
   {
     "kristijanhusak/vim-dadbod-ui",
     dependencies = {
-      { "tpope/vim-dadbod", lazy = true },
+      { "tpope/vim-dadbod",                     lazy = true },
       { "kristijanhusak/vim-dadbod-completion", ft = { "sql", "mysql", "plsql" }, lazy = true },
     },
     cmd = function()
