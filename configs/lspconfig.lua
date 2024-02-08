@@ -4,7 +4,7 @@ local capabilities = configs.capabilities
 
 local lspconf = require "lspconfig"
 local servers =
-  { "cssls", "clangd", "dockerls", "pyright", "jsonls", "sqlls", "salt_ls", "yamlls", "ruff-lsp", "taplo" }
+  { "cssls", "clangd", "dockerls", "pyright", "jsonls", "sqlls", "salt_ls", "yamlls", "ruff_lsp", "taplo" }
 
 for _, lsp in ipairs(servers) do
   lspconf[lsp].setup {

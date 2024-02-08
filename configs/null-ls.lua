@@ -38,9 +38,8 @@ local sources = {
   lint.yamllint,
 
   --python
-  formatting.black,
   lint.ruff,
-  lint.flake8,
+  formatting.ruff,
 
   -- sql
   lint.sqlfluff.with {
