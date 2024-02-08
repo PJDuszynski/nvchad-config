@@ -54,8 +54,8 @@ local plugins = {
     "NeogitOrg/neogit",
     event = "VeryLazy",
     dependencies = {
-      "nvim-lua/plenary.nvim",         -- required
-      "sindrets/diffview.nvim",        -- optional - Diff integration
+      "nvim-lua/plenary.nvim", -- required
+      "sindrets/diffview.nvim", -- optional - Diff integration
       "nvim-telescope/telescope.nvim", -- optional
     },
     config = true,
@@ -64,7 +64,7 @@ local plugins = {
     "junnplus/lsp-setup.nvim",
     dependencies = {
       "neovim/nvim-lspconfig",
-      "williamboman/mason.nvim",           -- optional
+      "williamboman/mason.nvim", -- optional
       "williamboman/mason-lspconfig.nvim", -- optional
     },
   },
@@ -85,7 +85,7 @@ local plugins = {
   {
     "kristijanhusak/vim-dadbod-ui",
     dependencies = {
-      { "tpope/vim-dadbod",                     lazy = true },
+      { "tpope/vim-dadbod", lazy = true },
       { "kristijanhusak/vim-dadbod-completion", ft = { "sql", "mysql", "plsql" }, lazy = true },
     },
     cmd = function()
@@ -120,6 +120,14 @@ local plugins = {
       "MunifTanjim/nui.nvim",
       "rcarriga/nvim-notify",
     },
+  },
+  {
+    "Wansmer/sibling-swap.nvim",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    config = function()
+      require("sibling-swap").setup()
+    end,
+    event = "VeryLazy",
   },
 }
 
