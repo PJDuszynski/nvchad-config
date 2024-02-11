@@ -3,8 +3,20 @@ local on_attach = configs.on_attach
 local capabilities = configs.capabilities
 
 local lspconf = require "lspconfig"
-local servers =
-  { "bashls", "cssls", "clangd", "dockerls", "pyright", "jsonls", "sqlls", "salt_ls", "yamlls", "ruff_lsp", "taplo" }
+local servers = {
+  "bashls",
+  "clangd",
+  "cssls",
+  "dockerls",
+  "html",
+  "jsonls",
+  "pyright",
+  "ruff_lsp",
+  "salt_ls",
+  "sqlls",
+  "taplo",
+  "yamlls",
+}
 
 for _, lsp in ipairs(servers) do
   lspconf[lsp].setup {
