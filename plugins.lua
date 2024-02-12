@@ -129,6 +129,15 @@ local plugins = {
     end,
     event = "VeryLazy",
   },
+  {
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = function()
+      require "custom.configs.harpoon"
+    end,
+    event = "VeryLazy",
+  },
 }
 
 return plugins
