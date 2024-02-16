@@ -1,8 +1,8 @@
 require("nvim-treesitter.configs").setup {
 
   highlight = {
-    enable = true
-  }
+    enable = true,
+  },
 
   ensure_installed = {
     "markdown_inline",
