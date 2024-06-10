@@ -8,9 +8,9 @@ M.general = {
     ["<C-j>"] = { "<cmd> TmuxNavigateDown<CR>", "window down" },
     ["<C-k>"] = { "<cmd> TmuxNavigateUp<CR>", "window up" },
     -- trouble
-    ["<leader>xd"] = { "<cmd> TroubleToggle document_diagnostics<CR>", "Show document diagnostics" },
-    ["<leader>xw"] = { "<cmd> TroubleToggle workspace_diagnostics<CR>", "Show workspace diagnostics" },
-    ["<leader>xx"] = { "<cmd> TroubleToggle <CR>", "Toggle diagnostics pane" },
+    ["<leader>xd"] = { "<cmd> Trouble diagnostics toggle filter.buf=0<CR>", "Show document diagnostics" },
+    ["<leader>xw"] = { "<cmd> Trouble diagnostics toggle<CR>", "Show workspace diagnostics" },
+    ["<leader>xx"] = { "<cmd> Trouble loclist toggle<CR>", "Toggle diagnostics pane" },
     -- neogit
     ["<leader>gg"] = { "<cmd> Neogit<Cr>", "Show diagnostics" },
     -- spectre
