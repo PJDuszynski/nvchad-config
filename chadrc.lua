@@ -2,12 +2,12 @@
 local M = {}
 
 M.ui = {
-  theme = "rxyhn",
+  theme = "nightfox",
   statusline = {
-    theme = "minimal",
+    theme = "vscode",
   },
   tabufline = {
-    theme = "minimal",
+    theme = "vscode",
   },
 }
 M.plugins = "custom.plugins"
