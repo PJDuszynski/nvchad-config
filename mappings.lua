@@ -30,9 +30,11 @@ M.general = {
 
     -- Buffer control
     ["<leader>bk"] = { "<cmd>bufdo bwipeout<CR>", "Kill all buffers" },
+    ["<F11>"] = { "<cmd>set spell!<CR>", "Toggle spellcheck" },
   },
   v = {
     ["C-C"] = { '"+y', "Copy to system clipboard" },
+    ["<F11>"] = { "<cmd>set spell!<CR>", "Toggle spellcheck" },
   },
 }
 return M
