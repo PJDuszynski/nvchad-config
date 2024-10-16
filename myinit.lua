@@ -1,5 +1,4 @@
-vim.g.dap_virtual_text = true
-vim.opt.colorcolumn = "140"
+vim.g.dap_virtual_text = true vim.opt.colorcolumn = "140"
 
 vim.opt.autowrite = true
 vim.opt.cmdheight = 2
@@ -12,6 +11,7 @@ vim.opt.listchars = "space:·"
 
 vim.g.indent_blankline_use_treesitter = true
 vim.g.nvim_tree_auto_open = 1
+
 
 vim.filetype.add {
   extension = {
@@ -36,4 +36,3 @@ local function open_nvim_tree(data)
 end
 
 vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
-

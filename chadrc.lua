@@ -10,6 +10,6 @@ M.ui = {
     theme = "vscode",
   },
 }
-M.plugins = "custom.plugins"
-M.mappings = require "custom.mappings"
+-- M.plugins = "plugins"
+-- M.mappings = require "mappings"
 return M

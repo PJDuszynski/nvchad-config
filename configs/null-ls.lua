@@ -3,7 +3,7 @@ local null_ls = require "null-ls"
 local formatting = null_ls.builtins.formatting
 local lint = null_ls.builtins.diagnostics
 local sql_dialect = function()
-  if string.find(vim.fn.getcwd(), "clickhouse") then
+  if string.find(vim.fn.getcwd(), "hawkeye") then
     return "clickhouse"
   else
     return "postgres"

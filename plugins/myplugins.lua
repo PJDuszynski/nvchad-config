@@ -5,12 +5,12 @@ local plugins = {
   {
     "nvim-treesitter/nvim-treesitter",
     config = function()
-      require "custom.configs.treesitter"
+      require "configs.treesitter"
     end,
   },
   {
     "christoomey/vim-tmux-navigator",
-    cmd = require("custom.configs.vim-tmux-navigator").cmd,
+    cmd = require("configs.vim-tmux-navigator").cmd,
     lazy = false,
   },
   {
@@ -25,7 +25,7 @@ local plugins = {
     dependencies = { "neovim/nvim-lspconfig", "nvim-telescope/telescope.nvim", "mfussenegger/nvim-dap-python" },
     event = "VeryLazy",
     config = function()
-      require "custom.configs.venv-selector"
+      require "configs.venv-selector"
     end,
   },
   {
@@ -34,9 +34,9 @@ local plugins = {
       "nvimtools/none-ls.nvim",
     },
     config = function()
-      require "plugins.configs.lspconfig"
-      require "custom.configs.lspconfig"
-      require "custom.configs.null-ls"
+      require "nvchad.configs.lspconfig"
+      require "configs.lspconfig"
+      require "configs.null-ls"
     end,
   },
   {
@@ -44,7 +44,7 @@ local plugins = {
     ft = "rust",
     dependencies = "neovim/nvim-lspconfig",
     opts = function()
-      return require "custom.configs.rust-tools"
+      return require "configs.rust-tools"
     end,
     config = function(_, opts)
       require("rust-tools").setup(opts)
@@ -89,17 +89,17 @@ local plugins = {
       { "kristijanhusak/vim-dadbod-completion", ft = { "sql", "mysql", "plsql" }, lazy = true },
     },
     cmd = function()
-      return require("custom.configs.vim-dadbod-ui").cmd
+      return require("configs.vim-dadbod-ui").cmd
     end,
     init = function()
-      require("custom.configs.vim-dadbod-ui").init()
+      require("configs.vim-dadbod-ui").init()
     end,
   },
   {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
     event = "VeryLazy",
     config = function()
-      require "custom.configs.mason-pkgs"
+      require "configs.mason-pkgs"
     end,
   },
   {
@@ -107,14 +107,14 @@ local plugins = {
     event = "VeryLazy",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = function()
-      return require "custom.configs.oil"
+      return require "configs.oil"
     end,
   },
   {
     "folke/noice.nvim",
     event = "VeryLazy",
     config = function()
-      return require "custom.configs.noice"
+      return require "configs.noice"
     end,
     dependencies = {
       "MunifTanjim/nui.nvim",
@@ -134,7 +134,7 @@ local plugins = {
     branch = "harpoon2",
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
-      require "custom.configs.harpoon"
+      require "configs.harpoon"
     end,
     event = "VeryLazy",
   },
