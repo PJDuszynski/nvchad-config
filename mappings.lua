@@ -1,41 +1,32 @@
-require "nvchad.mappings"
-local M = {}
+require("nvchad.mappings")
+local map = vim.keymap.set
 
-M.general = {
-  -- tmux-vim-navigator keyboard shortcuts
-  n = {
-    ["<C-h>"] = { "<cmd> TmuxNavigateLeft<CR>", "window left" },
-    ["<C-l>"] = { "<cmd> TmuxNavigateRight<CR>", "window right" },
-    ["<C-j>"] = { "<cmd> TmuxNavigateDown<CR>", "window down" },
-    ["<C-k>"] = { "<cmd> TmuxNavigateUp<CR>", "window up" },
-    -- trouble
-    ["<leader>xd"] = { "<cmd> Trouble diagnostics toggle filter.buf=0<CR>", "Show document diagnostics" },
-    ["<leader>xw"] = { "<cmd> Trouble diagnostics toggle<CR>", "Show workspace diagnostics" },
-    ["<leader>xx"] = { "<cmd> Trouble loclist toggle<CR>", "Toggle diagnostics pane" },
-    -- neogit
-    ["<leader>gg"] = { "<cmd> Neogit<Cr>", "Show diagnostics" },
-    -- spectre
-    ["<leader>S"] = { "<cmd> lua require('spectre').toggle()<CR>", "Toggle Spectre" },
-    ["<leader>sw"] = { "<cmd> lua require('spectre').open_visual({select_word=true})<CR>", "Search current word" },
+	-- tmux-vim-navigator keyboard shortcuts
+		map("n", "<C-h>", "<cmd> TmuxNavigateLeft<CR>", { desc = "window left" })
+		map("n", "<C-l>", "<cmd> TmuxNavigateRight<CR>", { desc = "window right" })
+		map("n", "<C-j>", "<cmd> TmuxNavigateDown<CR>", { desc = "window down" })
+		map("n", "<C-k>", "<cmd> TmuxNavigateUp<CR>", { desc = "window up" })
+		--
+		-- trouble
+		map("n", "<leader>xd", "<cmd> Trouble diagnostics toggle filter.buf=0<CR>", { desc = "Show document diagnostics" })
+		map("n", "<leader>xw", "<cmd> Trouble diagnostics toggle<CR>", { desc = "Show workspace diagnostics" })
+		map("n", "<leader>xx", "<cmd> Trouble loclist toggle<CR>", { desc = "Toggle diagnostics pane" })
+		-- neogit
+		map("n", "<leader>gg", "<cmd> Neogit<Cr>", {desc = "Show diagnostics" })
+		-- spectre
+		map("n", "<leader>S", "<cmd> lua require('spectre').toggle()<CR>", {desc = "Toggle Spectre" })
+		map("n", "<leader>sw", "<cmd> lua require('spectre').open_visual({select_word=true})<CR>", {desc = "Search current word" })
 
-    [",P"] = { '"+P', desc = "Paste from system clipboard" },
-    [",p"] = { '"+p', desc = "Paste from system clipboard" },
-    ["<leader>d"] = { "<cmd> DBUIToggle <CR>", desc = "Toggle Database explorer" },
-    ["<leader>o"] = { "<cmd> Oil --float <CR>", desc = "Edit filesystem in vim" },
+    -- general
+		map("n", ",P", '"+P', { desc = "Paste from system clipboard" })
+		map("n", ",p", '"+p', { desc = "Paste from system clipboard" })
+		map("n", "<leader>d", "<cmd> DBUIToggle <CR>", { desc = "Toggle Database explorer" })
+		map("n", "<leader>o", "<cmd> Oil --float <CR>", { desc = "Edit filesystem in vim" })
 
-    ["<F9>"] = { "<cmd> lua require('noice').cmd('dismiss')<CR>", "Dismiss messages" },
+		map("n", "<F9>", "<cmd> lua require('noice').cmd('dismiss')<CR>", {desc = "Dismiss messages" })
 
-    -- venv selector
-    ["<leader>vs"] = { "<cmd>VenvSelect<cr>" },
-    ["<leader>vc"] = { "<cmd>VenvSelectCached<cr>" },
-
-    -- Buffer control
-    ["<leader>bk"] = { "<cmd>bufdo bwipeout<CR>", "Kill all buffers" },
-    ["<F11>"] = { "<cmd>set spell!<CR>", "Toggle spellcheck" },
-  },
-  v = {
-    ["C-C"] = { '"+y', "Copy to system clipboard" },
-    ["<F11>"] = { "<cmd>set spell!<CR>", "Toggle spellcheck" },
-  },
-}
-return M
+		-- Buffer control
+		map("v", "<leader>bk", "<cmd>bufdo bwipeout<CR>", {desc = "Kill all buffers" })
+		map("v", "<F11>", "<cmd>set spell!<CR>", {desc = "Toggle spellcheck" })
+		map("v", "C-C", '"+y', {desc = "Copy to system clipboard" })
+		map("v", "<F11>", "<cmd>set spell!<CR>", {desc = "Toggle spellcheck" })
