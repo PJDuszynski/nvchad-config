@@ -20,7 +20,6 @@ require("mason-tool-installer").setup {
     "ruff",
     "ruff",
     "ruff-lsp",
-    "salt_ls",
     "shellcheck",
     "shellharden",
     "sqlfluff",
