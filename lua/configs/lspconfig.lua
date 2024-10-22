@@ -10,6 +10,7 @@ local servers = {
   "dockerls",
   "html",
   "jsonls",
+  "nushell",
   "pyright",
   "ruff_lsp",
   "salt_ls",
