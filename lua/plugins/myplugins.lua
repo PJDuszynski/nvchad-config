@@ -7,6 +7,9 @@ local plugins = {
     config = function()
       require "configs.treesitter"
     end,
+    dependencies = {
+      { "nushell/tree-sitter-nu" },
+    },
   },
   {
     "christoomey/vim-tmux-navigator",
@@ -19,14 +22,6 @@ local plugins = {
   {
     "hiphish/rainbow-delimiters.nvim",
     lazy = false,
-  },
-  {
-    "linux-cultist/venv-selector.nvim",
-    dependencies = { "neovim/nvim-lspconfig", "nvim-telescope/telescope.nvim", "mfussenegger/nvim-dap-python" },
-    event = "VeryLazy",
-    config = function()
-      require "configs.venv-selector"
-    end,
   },
   {
     "neovim/nvim-lspconfig",
