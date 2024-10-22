@@ -30,6 +30,7 @@ map("n", "<leader>d", "<cmd> DBUIToggle <CR>", { desc = "Toggle Database explore
 map("n", "<leader>o", "<cmd> Oil --float <CR>", { desc = "Edit filesystem in vim" })
 
 map("n", "<F9>", "<cmd> lua require('noice').cmd('dismiss')<CR>", { desc = "Dismiss messages" })
+map("n", "<F5>", "<cmd>:w<CR>", { desc = "Save File" })
 
 -- Buffer control
 map("v", "<leader>bk", "<cmd>bufdo bwipeout<CR>", { desc = "Kill all buffers" })
