@@ -19,6 +19,16 @@ local servers = {
   "yamlls",
 }
 
+lspconf.rust_analyzer.setup {
+  settings = {
+    ['rust-analyzer'] = {
+      check = {
+        command = "clippy"
+      }
+    }
+  }
+}
+
 for _, lsp in ipairs(servers) do
   lspconf[lsp].setup {
     on_attach = on_attach,
