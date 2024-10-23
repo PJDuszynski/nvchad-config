@@ -37,3 +37,8 @@ map("v", "<leader>bk", "<cmd>bufdo bwipeout<CR>", { desc = "Kill all buffers" })
 map("v", "<F11>", "<cmd>set spell!<CR>", { desc = "Toggle spellcheck" })
 map("v", "C-C", '"+y', { desc = "Copy to system clipboard" })
 map("v", "<F11>", "<cmd>set spell!<CR>", { desc = "Toggle spellcheck" })
+
+-- Split Windows
+map("n", "<C-s>v", "<cmd>vsplit<CR>", { desc = "Split Vertically" })
+map("n", "<C-s>h", "<cmd>split<CR>", { desc = "Split Horizontally" })
+map("n", "<C-s>q", "<cmd>close<CR>", { desc = "Close Pane" })
