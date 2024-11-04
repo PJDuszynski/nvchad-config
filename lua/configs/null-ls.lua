@@ -1,7 +1,7 @@
-local null_ls = require "null-ls"
+local none_ls = require "null-ls"
 
-local formatting = null_ls.builtins.formatting
-local lint = null_ls.builtins.diagnostics
+local formatting = none_ls.builtins.formatting
+local lint = none_ls.builtins.diagnostics
 local sql_dialect = function()
   if string.find(vim.fn.getcwd(), "hawkeye") then
     return "clickhouse"
@@ -11,9 +11,9 @@ local sql_dialect = function()
 end
 
 local nomadfmt = {
-  method = null_ls.methods.FORMATTING,
+  method = none_ls.methods.FORMATTING,
   filetypes = { "hcl" },
-  generator = null_ls.formatter {
+  generator = none_ls.formatter {
     command = "nomad",
     args = { "fmt", "-" },
     to_stdin = true,
@@ -24,22 +24,15 @@ local nomadfmt = {
   },
 }
 
-null_ls.register(nomadfmt)
+none_ls.register(nomadfmt)
 
 local sources = {
   -- general
   formatting.stylua,
   formatting.shellharden,
   formatting.yamlfmt,
-  formatting.rustfmt,
-  formatting.fixjson,
   formatting.prettier,
-  lint.shellcheck,
   lint.yamllint,
-
-  --python
-  lint.ruff,
-  formatting.ruff,
 
   -- sql
   lint.sqlfluff.with {
@@ -50,7 +43,7 @@ local sources = {
   },
 }
 
-null_ls.setup {
+none_ls.setup {
   debug = true,
   sources = sources,
 }
