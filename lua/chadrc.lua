@@ -1,7 +1,7 @@
 ---@type ChadrcConfig
 local M = {}
 
-M.ui = {
+M.base64 = {
   theme = "nightfox",
   statusline = {
     theme = "vscode",

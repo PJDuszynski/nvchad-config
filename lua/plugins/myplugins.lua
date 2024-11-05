@@ -127,6 +127,10 @@ local plugins = {
     end,
     event = "VeryLazy",
   },
+  {
+    "isobit/vim-caddyfile",
+    event = "VeryLazy",
+  },
 }
 
 return plugins
