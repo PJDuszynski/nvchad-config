@@ -12,21 +12,11 @@ local servers = {
   "jsonls",
   "nushell",
   "pyright",
-  "ruff_lsp",
+  "ruff",
   "salt_ls",
   "sqlls",
   "taplo",
   "yamlls",
-}
-
-lspconf.rust_analyzer.setup {
-  settings = {
-    ['rust-analyzer'] = {
-      check = {
-        command = "clippy"
-      }
-    }
-  }
 }
 
 for _, lsp in ipairs(servers) do
