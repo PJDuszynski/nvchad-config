@@ -42,8 +42,3 @@ local sources = {
     extra_args = { "--dialect", sql_dialect() },
   },
 }
-
-none_ls.setup {
-  debug = true,
-  sources = sources,
-}

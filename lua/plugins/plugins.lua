@@ -43,9 +43,9 @@ local plugins = {
     "NeogitOrg/neogit",
     event = "VeryLazy",
     dependencies = {
-      "nvim-lua/plenary.nvim", -- required
-      "sindrets/diffview.nvim", -- optional - Diff integration
-      "nvim-telescope/telescope.nvim", -- optional
+      "nvim-lua/plenary.nvim",
+      "sindrets/diffview.nvim",
+      "nvim-telescope/telescope.nvim",
     },
     config = true,
   },
@@ -53,8 +53,8 @@ local plugins = {
     "junnplus/lsp-setup.nvim",
     dependencies = {
       "neovim/nvim-lspconfig",
-      "williamboman/mason.nvim", -- optional
-      "williamboman/mason-lspconfig.nvim", -- optional
+      "williamboman/mason.nvim",
+      "williamboman/mason-lspconfig.nvim",
     },
   },
   {
@@ -70,19 +70,6 @@ local plugins = {
   {
     "NoahTheDuke/vim-just",
     ft = { "just" },
-  },
-  {
-    "kristijanhusak/vim-dadbod-ui",
-    dependencies = {
-      { "tpope/vim-dadbod", lazy = true },
-      { "kristijanhusak/vim-dadbod-completion", ft = { "sql", "mysql", "plsql" }, lazy = true },
-    },
-    cmd = function()
-      return require("configs.vim-dadbod-ui").cmd
-    end,
-    init = function()
-      require("configs.vim-dadbod-ui").init()
-    end,
   },
   {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
@@ -115,15 +102,6 @@ local plugins = {
     dependencies = { "nvim-treesitter/nvim-treesitter" },
     config = function()
       require("sibling-swap").setup()
-    end,
-    event = "VeryLazy",
-  },
-  {
-    "ThePrimeagen/harpoon",
-    branch = "harpoon2",
-    dependencies = { "nvim-lua/plenary.nvim" },
-    config = function()
-      require "configs.harpoon"
     end,
     event = "VeryLazy",
   },

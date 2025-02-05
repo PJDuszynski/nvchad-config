@@ -26,7 +26,6 @@ map(
 -- general
 map("n", ",P", '"+P', { desc = "Paste from system clipboard" })
 map("n", ",p", '"+p', { desc = "Paste from system clipboard" })
-map("n", "<leader>d", "<cmd> DBUIToggle <CR>", { desc = "Toggle Database explorer" })
 map("n", "<leader>o", "<cmd> Oil --float <CR>", { desc = "Edit filesystem in vim" })
 
 map("n", "<F9>", "<cmd> lua require('noice').cmd('dismiss')<CR>", { desc = "Dismiss messages" })
@@ -37,4 +36,3 @@ map("v", "<leader>bk", "<cmd>bufdo bwipeout<CR>", { desc = "Kill all buffers" })
 map("v", "<F11>", "<cmd>set spell!<CR>", { desc = "Toggle spellcheck" })
 map("v", "C-C", '"+y', { desc = "Copy to system clipboard" })
 map("v", "<F11>", "<cmd>set spell!<CR>", { desc = "Toggle spellcheck" })
-
